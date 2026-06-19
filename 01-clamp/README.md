@@ -10,48 +10,31 @@ It is widely used for fluid typography and responsive UI without media queries.
 
 ## 🧩 Syntax
 
-```css
 clamp(min, preferred, max);
 
-Example
--------
+### Example
 
-font-size: clamp(16px, 2vw, 32px);   `
+font-size: clamp(16px, 2vw, 32px);
 
-📖 Explanation
---------------
+## Explanation
 
-*   16px → minimum size (never smaller than this)
+-   **16px** → minimum size (never smaller than this)
+-   **2vw** → preferred fluid value based on viewport width
+-   **32px** → maximum size (never larger than this)
 
-*   2vw → preferred fluid value based on viewport width
+## Use cases
 
-*   32px → maximum size (never larger than this)
+-   Fluid typography
+-   Responsive spacing (margin, padding)
+-   Button sizing
+-   Border radius scaling
+-   Layout responsiveness
 
+## Official documentation
 
-🎯 Use cases
-------------
+-   [MDN Web Docs – clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
+-   [CSS-Tricks guide – clamp()](https://css-tricks.com/almanac/functions/c/clamp/)
 
-*   Fluid typography
+## Key takeaway
 
-*   Responsive spacing (margin, padding)
-
-*   Button sizing
-
-*   Border radius scaling
-
-*   Layout responsiveness
-
-
-📚 Official documentation
--------------------------
-
-*   [MDN Web Docs – clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp?utm_source=chatgpt.com)
-
-*   [CSS-Tricks guide – clamp()](https://css-tricks.com/almanac/functions/c/clamp/?utm_source=chatgpt.com)
-
-
-⚡ Key takeaway
---------------
-
-clamp() lets you build responsive designs that automatically adapt between a minimum and maximum value without media queries.
-```
+`clamp()` lets you build responsive designs that automatically adapt between a minimum and maximum value without media queries.
