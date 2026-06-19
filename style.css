@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #121212;
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: min(700px, 90%);
+}
+
+h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+p {
+    margin-bottom: 30px;
+
+    color: #bdbdbd;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background: #222;
+
+    border-radius: 10px;
+}
