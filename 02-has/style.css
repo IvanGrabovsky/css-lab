@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  max-width: 300px;
+  transition: 0.3s;
+}
+
+.card:has(input:checked) {
+  border-color: green;
+  background-color: #e8ffe8;
+}
