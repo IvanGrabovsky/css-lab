@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+}
+
+.wrapper {
+  width: min(100%, 700px);
+  border: 2px dashed #999;
+  padding: 1rem;
+
+  /* Enable container queries */
+  container-type: inline-size;
+}
+
+.card {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Container query */
+@container (min-width: 500px) {
+  .card {
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+  }
+
+  .card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}

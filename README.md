@@ -17,7 +17,7 @@ A personal knowledge base for modern CSS.
 | ---------------------------------------------- | ------------------------------------- | ------ |
 | [clamp()](./01-clamp/)                         | Fluid responsive values               | ✅      |
 | [:has()](./02-has/)                            | Parent selector                       | ✅      |
-| [Container Queries](./03-container-queries/)   | Component-based responsiveness        | ⏳      |
+| [Container Queries](./03-container-queries/)   | Component-based responsiveness        | ✅      |
 | [Subgrid](./04-subgrid/)                       | Nested grid alignment                 | ⏳      |
 | [Scroll Animations](./05-scroll-animations/)   | Scroll-driven animations              | ⏳      |
 | [View Transitions](./06-view-transitions/)     | Smooth page transitions               | ⏳      |
@@ -41,6 +41,10 @@ css-lab/
 │   └── style.css
 │
 ├── 03-container-queries/
+│   ├── README.md
+│   ├── index.html
+│   └── style.css
+│
 ├── 04-subgrid/
 ├── 05-scroll-animations/
 ├── 06-view-transitions/
@@ -55,7 +59,7 @@ css-lab/
 
 * [x] [clamp()](./01-clamp/)
 * [x] [:has()](./02-has/)
-* [ ] [Container Queries](./03-container-queries/)
+* [x] [Container Queries](./03-container-queries/)
 * [ ] [Subgrid](./04-subgrid/)
 * [ ] [Scroll Animations](./05-scroll-animations/)
 * [ ] [View Transitions](./06-view-transitions/)
@@ -67,7 +71,7 @@ css-lab/
 
 | Metric      | Value |
 | ----------- | ----- |
-| Completed   | 2     |
+| Completed   | 3     |
 | In Progress | 0     |
 | Planned     | 20+   |
 
