@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: system-ui, sans-serif;
+
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  padding: 4rem 2rem;
+
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 1rem;
+
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.25rem;
+
+  opacity: 0.8;
+}
+
+.spacer {
+  height: 70vh;
+}
+
+.card {
+  width: min(500px, 90%);
+
+  margin: 0 auto;
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  box-shadow:
+    0 20px 40px rgba(99, 102, 241, 0.35);
+
+  animation: reveal linear;
+
+  animation-timeline: view();
+
+  animation-range: entry 0% cover 70%;
+}
+
+.card h2 {
+  margin-top: 0;
+
+  font-size: 2rem;
+}
+
+.card p {
+  line-height: 1.7;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(150px)
+      scale(0.8)
+      rotate(-5deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0deg);
+  }
+}

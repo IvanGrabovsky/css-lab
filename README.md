@@ -19,7 +19,7 @@ A personal knowledge base for modern CSS.
 | [:has()](./02-has/)                            | Parent selector                       | ✅      |
 | [Container Queries](./03-container-queries/)   | Component-based responsiveness        | ✅      |
 | [Subgrid](./04-subgrid/)                       | Nested grid alignment                 | ✅      |
-| [Scroll Animations](./05-scroll-animations/)   | Scroll-driven animations              | ⏳      |
+| [Scroll Animations](./05-scroll-animations/)   | Scroll-driven animations              | ✅      |
 | [View Transitions](./06-view-transitions/)     | Smooth page transitions               | ⏳      |
 | [Anchor Positioning](./07-anchor-positioning/) | Position elements relative to anchors | ⏳      |
 
@@ -51,6 +51,10 @@ css-lab/
 │   └── style.css
 │
 ├── 05-scroll-animations/
+│   ├── README.md
+│   ├── index.html
+│   └── style.css
+│
 ├── 06-view-transitions/
 ├── 07-anchor-positioning/
 │
@@ -65,7 +69,7 @@ css-lab/
 * [x] [:has()](./02-has/)
 * [x] [Container Queries](./03-container-queries/)
 * [x] [Subgrid](./04-subgrid/)
-* [ ] [Scroll Animations](./05-scroll-animations/)
+* [x] [Scroll Animations](./05-scroll-animations/)
 * [ ] [View Transitions](./06-view-transitions/)
 * [ ] [Anchor Positioning](./07-anchor-positioning/)
 
@@ -75,7 +79,7 @@ css-lab/
 
 | Metric      | Value |
 | ----------- | ----- |
-| Completed   | 3     |
+| Completed   | 5     |
 | In Progress | 0     |
 | Planned     | 20+   |
 
