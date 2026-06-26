@@ -11,13 +11,13 @@ This makes truly reusable and responsive UI components possible.
 css
 
 .card-wrapper {
-  container-type: inline-size;
+container-type: inline-size;
 }
 
 @container (min-width: 500px) {
-  .card {
-    display: flex;
-  }
+.card {
+display: flex;
+}
 }
 
 ## 💡 Example

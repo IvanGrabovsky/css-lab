@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Transitions Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>View Transitions Demo</h1>
+
+    <p>Click the button to switch the theme.</p>
+
+    <button id="toggleTheme">Toggle Theme</button>
+
+    <script>
+      const button = document.getElementById("toggleTheme");
+
+      button.addEventListener("click", () => {
+        if (!document.startViewTransition) {
+          document.body.classList.toggle("dark");
+          return;
+        }
+
+        document.startViewTransition(() => {
+          document.body.classList.toggle("dark");
+        });
+      });
+    </script>
+  </body>
+</html>

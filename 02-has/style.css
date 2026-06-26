@@ -1,21 +1,165 @@
+/* =========================
+   BASE SYSTEM
+========================= */
+
+:root {
+  --bg: #0b0f17;
+  --card: #121a2a;
+  --text: #e6edf3;
+  --muted: #8aa0b6;
+  --accent: #7c5cff;
+  --ok: #2ee59d;
+  --danger: #ff4d4d;
+
+  --radius: 16px;
+  --space: 16px;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
-  padding: 2rem;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
+
+/* =========================
+   LAYOUT
+========================= */
+
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header p {
+  color: var(--muted);
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   CARD BASE
+========================= */
 
 .card {
-  padding: 2rem;
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  max-width: 300px;
-  transition: 0.3s;
+  background: var(--card);
+  padding: var(--space);
+  border-radius: var(--radius);
+  transition: 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.card:has(input:checked) {
-  border-color: green;
-  background-color: #e8ffe8;
+.card h2 {
+  margin-top: 10px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   UI STATE 1 — SELECT (CHECKBOX)
+========================= */
+
+.card:has(input[type="checkbox"]:checked) {
+  border-color: var(--ok);
+  box-shadow: 0 0 0 1px rgba(46, 229, 157, 0.3);
+  transform: translateY(-4px);
+}
+
+.card:has(input[type="checkbox"]:checked) .btn {
+  background: var(--ok);
+}
+
+/* =========================
+   UI STATE 2 — FORM VALIDATION
+========================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: var(--text);
+}
+
+.form input:focus {
+  outline: 2px solid var(--accent);
+}
+
+/* invalid state */
+.card:has(input:invalid) {
+  border-color: var(--danger);
+}
+
+/* disable button if invalid exists */
+.card:has(input:invalid) .submit {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* =========================
+   UI STATE 3 — HOVER PARENT REACTION
+========================= */
+
+.card:has(.ghost:hover) {
+  background: #151f33;
+  border-color: rgba(124, 92, 255, 0.4);
+}
+
+/* =========================
+   MICRO INTERACTIONS
+========================= */
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card:active {
+  transform: scale(0.99);
 }

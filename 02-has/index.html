@@ -1,21 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>:has() Demo</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-has — CSS Lab</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <h1>:has() Demo</h1>
+  <body>
+    <main class="layout">
+      <header class="header">
+        <h1>CSS Lab — :has()</h1>
+        <p>State-driven UI without JavaScript</p>
+      </header>
 
-  <div class="card">
-    <label>
-      <input type="checkbox">
-      Select this card
-    </label>
-  </div>
+      <!-- CARD GRID -->
+      <section class="grid">
+        <!-- CARD 1: SELECTABLE CARD -->
+        <article class="card">
+          <label class="card__select">
+            <input type="checkbox" />
+            <span>Select this plan</span>
+          </label>
 
-</body>
+          <h2>Starter Plan</h2>
+          <p>Basic access to features.</p>
+
+          <button class="btn">Continue</button>
+        </article>
+
+        <!-- CARD 2: VALIDATION FORM CARD -->
+        <article class="card">
+          <form class="form">
+            <h2>Subscribe</h2>
+
+            <input type="email" placeholder="Email" required />
+
+            <button class="btn submit" type="submit">Submit</button>
+          </form>
+        </article>
+
+        <!-- CARD 3: HOVER REACTIVE CARD -->
+        <article class="card">
+          <h2>Hover System</h2>
+          <p>Hover button to affect parent card.</p>
+
+          <button class="btn ghost">Hover me</button>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>
