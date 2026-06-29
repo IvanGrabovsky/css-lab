@@ -21,7 +21,7 @@ A personal knowledge base for modern CSS.
 | [Subgrid](./04-subgrid/)                       | Nested grid alignment                 | ✅     |
 | [Scroll Animations](./05-scroll-animations/)   | Scroll-driven animations              | ✅     |
 | [View Transitions](./06-view-transitions/)     | Smooth page transitions               | ✅     |
-| [Anchor Positioning](./07-anchor-positioning/) | Position elements relative to anchors | ⏳     |
+| [Anchor Positioning](./07-anchor-positioning/) | Position elements relative to anchors | ✅     |
 
 ---
 
@@ -61,6 +61,9 @@ css-lab/
 │   └── style.css
 │
 ├── 07-anchor-positioning/
+│   ├── README.md
+│   ├── index.html
+│   └── style.css
 │
 └── README.md
 ```
@@ -75,7 +78,7 @@ css-lab/
 - [x] [Subgrid](./04-subgrid/)
 - [x] [Scroll Animations](./05-scroll-animations/)
 - [x] [View Transitions](./06-view-transitions/)
-- [ ] [Anchor Positioning](./07-anchor-positioning/)
+- [x] [Anchor Positioning](./07-anchor-positioning/)
 
 ---
 
@@ -83,7 +86,7 @@ css-lab/
 
 | Metric      | Value |
 | ----------- | ----- |
-| Completed   | 6     |
+| Completed   | 7     |
 | In Progress | 0     |
 | Planned     | 20+   |
 

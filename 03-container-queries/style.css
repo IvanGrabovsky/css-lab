@@ -1,44 +1,125 @@
+/* =========================
+   BASE RESET
+========================= */
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   font-family: system-ui, sans-serif;
+  background: #0b0f17;
+  color: #e6edf3;
   padding: 2rem;
 }
 
-.wrapper {
-  width: min(100%, 700px);
-  border: 2px dashed #999;
-  padding: 1rem;
+/* =========================
+   STAGE (CONTAINER ROOT)
+========================= */
 
-  /* Enable container queries */
+.stage {
+  width: min(100%, 900px);
+  margin: 0 auto;
+
+  padding: 20px;
+  border: 2px dashed #3a3a3a;
+  border-radius: 16px;
+
+  /* container query system */
   container-type: inline-size;
+  container-name: card-zone;
 }
+
+/* =========================
+   CARD BASE (mobile-first thinking)
+========================= */
 
 .card {
   display: grid;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
+  gap: 16px;
+
+  padding: 16px;
   border-radius: 16px;
+
+  background: #121a2a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.25s ease;
 }
 
 .card img {
   width: 100%;
   border-radius: 12px;
+  object-fit: cover;
 }
 
-/* Container query */
-@container (min-width: 500px) {
+.card h2 {
+  margin: 0;
+}
+
+.card p {
+  opacity: 0.75;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: #7c5cff;
+  color: white;
+
+  justify-self: start;
+}
+
+/* =========================
+   CONTAINER STATE 1 — SMALL (compact mode)
+========================= */
+
+@container card-zone (max-width: 399px) {
   .card {
-    grid-template-columns: 200px 1fr;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
   .card img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+  }
+}
+
+/* =========================
+   CONTAINER STATE 2 — MEDIUM (balanced mode)
+========================= */
+
+@container card-zone (min-width: 400px) and (max-width: 649px) {
+  .card {
+    grid-template-columns: 120px 1fr;
+    align-items: start;
+    gap: 14px;
+  }
+
+  .card img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* =========================
+   CONTAINER STATE 3 — LARGE (product mode)
+========================= */
+
+@container card-zone (min-width: 650px) {
+  .card {
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .card img {
+    width: 180px;
+    height: 180px;
   }
 }

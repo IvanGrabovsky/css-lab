@@ -1,0 +1,187 @@
+/* =========================
+   BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: system-ui, sans-serif;
+  background: #0b0f17;
+  color: #e6edf3;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   LAYOUT SYSTEM
+========================= */
+
+.panel {
+  display: grid;
+  gap: 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================
+   BUTTON ANCHOR SYSTEM
+========================= */
+
+.btn {
+  position: relative;
+
+  anchor-name: --btn;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+
+  background: #7c5cff;
+  color: white;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* anchor indicator (visual fix) */
+.btn::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0.6;
+}
+
+/* tooltip */
+.tooltip {
+  position: absolute;
+  position-anchor: --btn;
+
+  top: anchor(bottom);
+  left: anchor(center);
+
+  transform: translateX(-50%);
+
+  margin-top: 10px;
+
+  padding: 8px 10px;
+  border-radius: 10px;
+
+  background: #1b2233;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* =========================
+   INPUT ANCHOR SYSTEM
+========================= */
+
+.input-wrap {
+  width: 300px;
+  position: relative;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 10px 12px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: transparent;
+  color: white;
+
+  outline: none;
+
+  anchor-name: --input;
+}
+
+/* focus improvement (UX fix) */
+.input-wrap input:focus {
+  border-color: #7c5cff;
+}
+
+/* hint */
+.hint {
+  position: absolute;
+  position-anchor: --input;
+
+  top: anchor(bottom);
+  left: anchor(start);
+
+  margin-top: 6px;
+
+  font-size: 12px;
+  opacity: 0.7;
+
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* =========================
+   CARD ANCHOR SYSTEM
+========================= */
+
+.card {
+  anchor-name: --card;
+
+  position: relative;
+
+  padding: 18px;
+  border-radius: 16px;
+
+  background: #121a2a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.25s ease;
+
+  display: grid;
+  gap: 10px;
+}
+
+/* hover state cleanup */
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 92, 255, 0.4);
+}
+
+/* =========================
+   CARD ACTIONS (FIXED FLOAT FEEL)
+========================= */
+
+.actions {
+  position: absolute;
+  position-anchor: --card;
+
+  top: anchor(center);
+  left: anchor(center);
+
+  transform: translate(-50%, -50%) translateX(80px);
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: #0f1422;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  font-size: 12px;
+  display: inline-flex;
+  gap: 8px;
+
+  opacity: 0.95;
+}
