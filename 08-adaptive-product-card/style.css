@@ -30,7 +30,7 @@ h1 {
 }
 
 /* =========================
-   CARD
+   PRODUCT CARD
 ========================= */
 
 .product {
@@ -102,40 +102,46 @@ h1 {
 }
 
 /* =========================
-   FAVORITE (HEART STATE)
+   FAVORITE HEART
 ========================= */
 
-#fav-1 {
+.fav input {
   display: none;
-}
-
-.fav {
-  cursor: pointer;
 }
 
 .fav .heart {
   font-size: 22px;
+  cursor: pointer;
+
   opacity: 0.5;
   transform: scale(1);
+
   transition: 0.25s ease;
 }
 
-/* hover */
+/* hover state */
 .fav:hover .heart {
   opacity: 0.8;
   transform: scale(1.15);
 }
 
-/* checked state */
-.product:has(#fav-1:checked) {
+/* =========================
+   :has() STATE SYSTEM
+========================= */
+
+/* active card state */
+.product:has(.fav input:checked) {
   border-color: #6d5dfc;
+  transform: translateY(-3px);
 }
 
-.product:has(#fav-1:checked) .badge {
+/* badge active */
+.product:has(.fav input:checked) .badge {
   background: #22c55e;
 }
 
-.product:has(#fav-1:checked) .heart {
+/* heart active */
+.product:has(.fav input:checked) .heart {
   color: #ef4444;
   opacity: 1;
   transform: scale(1.35);
@@ -148,6 +154,7 @@ h1 {
 .rating {
   font-size: 14px;
   opacity: 0.9;
+
   display: flex;
   gap: 8px;
   align-items: center;
@@ -186,8 +193,10 @@ button {
   padding: 12px;
   border: none;
   border-radius: 12px;
+
   background: #6d5dfc;
   color: white;
+
   cursor: pointer;
   transition: 0.25s ease;
 }
