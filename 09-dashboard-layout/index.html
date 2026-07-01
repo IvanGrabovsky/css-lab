@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Lab Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="dashboard">
+      <!-- ================= HEADER ================= -->
+
+      <header class="header">
+        <div class="logo">
+          <h1>CSS Lab</h1>
+          <span>Dashboard</span>
+        </div>
+
+        <div class="search">
+          <input type="search" placeholder="Search components..." />
+        </div>
+
+        <div class="profile">
+          <button class="notification">🔔</button>
+
+          <img src="https://i.pravatar.cc/80" alt="Profile" />
+        </div>
+      </header>
+
+      <!-- ================= STATS ================= -->
+
+      <section class="stats">
+        <article class="stat-card">
+          <span class="label">Revenue</span>
+          <h2>$12,480</h2>
+          <span class="positive">+18%</span>
+        </article>
+
+        <article class="stat-card">
+          <span class="label">Orders</span>
+          <h2>1,248</h2>
+          <span class="positive">+9%</span>
+        </article>
+
+        <article class="stat-card">
+          <span class="label">Customers</span>
+          <h2>8,421</h2>
+          <span class="positive">+14%</span>
+        </article>
+
+        <article class="stat-card">
+          <span class="label">Growth</span>
+          <h2>32%</h2>
+          <span class="positive">+6%</span>
+        </article>
+      </section>
+
+      <!-- ================= CONTENT ================= -->
+
+      <section class="content">
+        <!-- Analytics -->
+
+        <section class="analytics">
+          <div class="section-title">
+            <h2>Analytics</h2>
+          </div>
+
+          <div class="chart">
+            <div class="bar" style="--value: 70%"></div>
+            <div class="bar" style="--value: 40%"></div>
+            <div class="bar" style="--value: 90%"></div>
+            <div class="bar" style="--value: 55%"></div>
+            <div class="bar" style="--value: 80%"></div>
+            <div class="bar" style="--value: 60%"></div>
+          </div>
+        </section>
+
+        <!-- Activity -->
+
+        <aside class="activity">
+          <div class="section-title">
+            <h2>Recent Activity</h2>
+          </div>
+
+          <ul>
+            <li>
+              <strong>New order received</strong>
+              <span>2 minutes ago</span>
+            </li>
+
+            <li>
+              <strong>Payment confirmed</strong>
+              <span>18 minutes ago</span>
+            </li>
+
+            <li>
+              <strong>User registered</strong>
+              <span>1 hour ago</span>
+            </li>
+
+            <li>
+              <strong>Product updated</strong>
+              <span>Today</span>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- ================= PRODUCTS ================= -->
+
+      <section class="products">
+        <div class="section-title">
+          <h2>Popular Products</h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="https://picsum.photos/300/200?1" alt="" />
+            <h3>Wireless Headphones</h3>
+            <p>$129</p>
+          </article>
+
+          <article class="product-card">
+            <img src="https://picsum.photos/300/200?2" alt="" />
+            <h3>Mechanical Keyboard</h3>
+            <p>$159</p>
+          </article>
+
+          <article class="product-card">
+            <img src="https://picsum.photos/300/200?3" alt="" />
+            <h3>Gaming Mouse</h3>
+            <p>$89</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
