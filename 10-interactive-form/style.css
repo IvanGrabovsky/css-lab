@@ -1,0 +1,211 @@
+/* =========================
+   BASE STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0b0f17;
+  color: #e6edf3;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.layout {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.header p {
+  color: #8b949e;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   FORM COMPONENT
+========================= */
+
+.interactive-form {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.interactive-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #c9d1d9;
+}
+
+/* =========================
+   INPUT & ANCHORS
+========================= */
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #c9d1d9;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+/* Assign Anchor Names to Inputs */
+.input-username { anchor-name: --anchor-username; }
+.input-email { anchor-name: --anchor-email; }
+.input-password { anchor-name: --anchor-password; }
+
+/* =========================
+   STATE-DRIVEN STYLES :has()
+========================= */
+
+/* 
+  If the input has been interacted with (not showing placeholder) 
+  and is invalid.
+*/
+.form-group:has(.input-field:not(:placeholder-shown):invalid) .input-field {
+  border-color: #f85149;
+}
+
+/* Focus on invalid input */
+.form-group:has(.input-field:not(:placeholder-shown):invalid:focus) .input-field {
+  box-shadow: 0 0 0 3px rgba(248, 81, 73, 0.3);
+}
+
+/* Valid input state */
+.form-group:has(.input-field:not(:placeholder-shown):valid) .input-field {
+  border-color: #2ea043;
+}
+
+/* =========================
+   TOOLTIP STYLES (Anchor Positioning)
+========================= */
+
+.tooltip {
+  position: absolute;
+  
+  /* Styling */
+  background: #f85149;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  pointer-events: none;
+  
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.2s, transform 0.2s;
+  
+  /* Z-index to appear above fields */
+  z-index: 10;
+}
+
+/* Tooltip connections */
+.tooltip-username { position-anchor: --anchor-username; }
+.tooltip-email { position-anchor: --anchor-email; }
+.tooltip-password { position-anchor: --anchor-password; }
+
+/* Tooltip positioning rules */
+.tooltip {
+  left: anchor(start);
+  top: anchor(bottom);
+  margin-top: 8px; /* space between input and tooltip */
+}
+
+/* Show tooltip when input is invalid and NOT focused (e.g. user tabbed away with invalid data)
+   Using :not(:placeholder-shown) ensures we don't show errors on empty, untouched required fields.
+*/
+.form-group:has(.input-field:not(:placeholder-shown):invalid:not(:focus)) .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Adding a little triangle to the tooltip */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 12px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #f85149 transparent;
+}
+
+/* =========================
+   FORM SUBMIT BUTTON & :has()
+========================= */
+
+.submit-btn {
+  margin-top: 8px;
+  padding: 12px;
+  background: #238636;
+  color: white;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #2ea043;
+}
+
+/* Disable button visually if any input is invalid 
+   using :has() on the form itself. 
+*/
+.interactive-form:has(.input-field:invalid) .submit-btn {
+  background: #21262d;
+  color: #8b949e;
+  cursor: not-allowed;
+  border-color: transparent;
+}

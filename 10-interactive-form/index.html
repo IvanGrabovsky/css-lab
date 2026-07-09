@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10-interactive-form — CSS Lab</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="header">
+        <h1>CSS Lab — Interactive Form</h1>
+        <p>:has() + Anchor Positioning for state-driven validation</p>
+      </header>
+
+      <section class="container">
+        <form class="interactive-form">
+          <h2>Create Account</h2>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+              type="text" 
+              id="username" 
+              class="input-field input-username" 
+              required 
+              minlength="3" 
+              placeholder="e.g. johndoe" 
+            />
+            <div class="tooltip tooltip-username">Username must be at least 3 characters.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              class="input-field input-email" 
+              required 
+              placeholder="e.g. john@example.com" 
+            />
+            <div class="tooltip tooltip-email">Please enter a valid email address.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              class="input-field input-password" 
+              required 
+              minlength="8" 
+              placeholder="••••••••" 
+            />
+            <div class="tooltip tooltip-password">Password must be at least 8 characters.</div>
+          </div>
+
+          <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
