@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Pricing Cards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="pricing-container">
+      <header class="pricing-header">
+        <h1>Choose Your Plan</h1>
+        <p>Simple, transparent pricing for everyone.</p>
+      </header>
+
+      <div class="pricing-grid">
+        <!-- Basic Plan -->
+        <article class="pricing-card">
+          <div class="card-header">
+            <h2>Basic</h2>
+            <p class="price"><span>$</span>9<span>/mo</span></p>
+            <p class="description">Perfect for individuals just getting started.</p>
+          </div>
+          <ul class="features">
+            <li>✅ 1 User</li>
+            <li>✅ 10 Projects</li>
+            <li>✅ Basic Support</li>
+            <li>❌ Custom Domain</li>
+            <li>❌ Analytics</li>
+          </ul>
+          <button class="cta-button">Get Started</button>
+        </article>
+
+        <!-- Pro Plan (Highlighted) -->
+        <article class="pricing-card pro">
+          <div class="badge">Most Popular</div>
+          <div class="card-header">
+            <h2>Pro</h2>
+            <p class="price"><span>$</span>29<span>/mo</span></p>
+            <p class="description">Ideal for growing teams and small businesses.</p>
+          </div>
+          <ul class="features">
+            <li>✅ 5 Users</li>
+            <li>✅ Unlimited Projects</li>
+            <li>✅ Priority Support</li>
+            <li>✅ Custom Domain</li>
+            <li>❌ Advanced Analytics</li>
+          </ul>
+          <button class="cta-button primary">Upgrade to Pro</button>
+        </article>
+
+        <!-- Enterprise Plan -->
+        <article class="pricing-card">
+          <div class="card-header">
+            <h2>Enterprise</h2>
+            <p class="price"><span>$</span>99<span>/mo</span></p>
+            <p class="description">For large scale organizations with custom needs.</p>
+          </div>
+          <ul class="features">
+            <li>✅ Unlimited Users</li>
+            <li>✅ Unlimited Projects</li>
+            <li>✅ 24/7 Dedicated Support</li>
+            <li>✅ Custom Domain</li>
+            <li>✅ Advanced Analytics</li>
+          </ul>
+          <button class="cta-button">Contact Sales</button>
+        </article>
+      </div>
+      
+      <div class="back-link">
+        <a href="../index.html">← Back to Labs</a>
+      </div>
+    </main>
+  </body>
+</html>
