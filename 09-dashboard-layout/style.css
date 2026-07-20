@@ -282,3 +282,22 @@ body {
   font-weight: 700;
   font-size: 1.25rem;
 }
+
+
+/* Back Link Styles */
+.back-link {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.back-link a {
+  color: inherit;
+  opacity: 0.7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+.back-link a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
