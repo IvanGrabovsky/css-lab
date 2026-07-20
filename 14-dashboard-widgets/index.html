@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Widgets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-header">
+    <h1>Analytics Dashboard</h1>
+    <p>Scroll down to see the widgets animate into view and resize the window to see them adapt.</p>
+    <a href="../index.html" class="back-link">← Back to Labs</a>
+  </div>
+  
+  <main class="dashboard-grid">
+    <!-- Large Widget -->
+    <article class="widget widget-large reveal-on-scroll">
+      <div class="widget-header">
+        <h2>Revenue Overview</h2>
+        <span class="badge positive">+14%</span>
+      </div>
+      <div class="widget-content">
+        <div class="stat-main">
+          <span class="value">$124,500</span>
+          <span class="label">Total this month</span>
+        </div>
+        <div class="chart-area placeholder-chart">
+           <!-- CSS visual representation of a chart -->
+           <div class="bar" style="--height: 40%;"></div>
+           <div class="bar" style="--height: 60%;"></div>
+           <div class="bar" style="--height: 30%;"></div>
+           <div class="bar" style="--height: 80%;"></div>
+           <div class="bar" style="--height: 50%;"></div>
+           <div class="bar" style="--height: 90%;"></div>
+           <div class="bar" style="--height: 75%;"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Medium Widget 1 -->
+    <article class="widget reveal-on-scroll">
+      <div class="widget-header">
+        <h2>Active Users</h2>
+      </div>
+      <div class="widget-content">
+        <div class="stat-main">
+          <span class="value">8,234</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="--target-width: 65%;"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Medium Widget 2 -->
+    <article class="widget reveal-on-scroll">
+      <div class="widget-header">
+        <h2>New Signups</h2>
+      </div>
+      <div class="widget-content">
+        <div class="stat-main">
+          <span class="value">423</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="--target-width: 40%;"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Wide Widget -->
+    <article class="widget widget-wide reveal-on-scroll">
+      <div class="widget-header">
+        <h2>Recent Transactions</h2>
+      </div>
+      <div class="widget-content transaction-list">
+        <div class="transaction-item">
+          <div class="tx-icon"></div>
+          <div class="tx-details">
+            <span class="tx-name">Stripe Payout</span>
+            <span class="tx-date">Today, 2:45 PM</span>
+          </div>
+          <span class="tx-amount positive">+$4,200.00</span>
+        </div>
+        <div class="transaction-item">
+          <div class="tx-icon alert"></div>
+          <div class="tx-details">
+            <span class="tx-name">AWS Hosting</span>
+            <span class="tx-date">Yesterday, 10:20 AM</span>
+          </div>
+          <span class="tx-amount negative">-$845.20</span>
+        </div>
+        <div class="transaction-item">
+          <div class="tx-icon"></div>
+          <div class="tx-details">
+            <span class="tx-name">Client Retainer</span>
+            <span class="tx-date">Aug 12, 9:00 AM</span>
+          </div>
+          <span class="tx-amount positive">+$2,500.00</span>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
