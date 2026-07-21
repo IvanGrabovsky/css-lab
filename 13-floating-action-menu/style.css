@@ -158,35 +158,46 @@ body {
   transform: scale(1.1);
 }
 
-/* Tooltips using Anchor Positioning */
-.fab-tooltip {
+/* Tooltips using ::before (label) and ::after (arrow) pseudo-elements.
+   This is reliable and doesn't require experimental Anchor Positioning. */
+.fab-item::before {
+  content: attr(data-label);
   position: absolute;
-  /* Tooltips anchor to their respective parent buttons */
-  right: anchor(left);
-  top: anchor(center);
+  right: calc(100% + 0.75rem);
+  top: 50%;
   translate: 0 -50%;
-  margin-right: 1rem;
-  
+
   background: var(--text-main);
   color: white;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   white-space: nowrap;
   pointer-events: none;
-  
-  /* Initial hidden state */
+
   opacity: 0;
-  transform: translateX(10px);
-  transition: all 0.2s ease;
+  transform: translateX(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.fab-item:nth-child(1) .fab-tooltip { position-anchor: --item-1; }
-.fab-item:nth-child(2) .fab-tooltip { position-anchor: --item-2; }
-.fab-item:nth-child(3) .fab-tooltip { position-anchor: --item-3; }
+/* Arrow for tooltip */
+.fab-item::after {
+  content: '';
+  position: absolute;
+  right: calc(100% + 0.25rem);
+  top: 50%;
+  translate: 0 -50%;
+  border: 5px solid transparent;
+  border-left-color: var(--text-main);
+  pointer-events: none;
 
-.fab-item:hover .fab-tooltip {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.fab-item:hover::before,
+.fab-item:hover::after {
   opacity: 1;
   transform: translateX(0);
 }

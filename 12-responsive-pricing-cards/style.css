@@ -68,6 +68,10 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   align-items: center;
+
+  /* Establish as a container so each card can query its available width */
+  container-type: inline-size;
+  container-name: pricing-grid;
 }
 
 .pricing-card {
@@ -234,14 +238,46 @@ body {
   color: var(--text-main);
 }
 
-/* Container Queries for more fine-grained responsiveness if needed */
-@container (max-width: 400px) {
+/* ====================================================
+   CONTAINER QUERIES
+   Cards respond to container width, not viewport width.
+   This makes them truly modular — drop .pricing-grid
+   anywhere and cards will adapt to available space.
+==================================================== */
+
+/* When the pricing grid is narrow (e.g. in a sidebar), reduce padding */
+@container pricing-grid (max-width: 500px) {
+  .pricing-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 1rem;
+  }
+
   .price {
     font-size: 2.5rem;
   }
+
+  /* Suppress the elevated pro card scale in tight containers */
+  .pricing-card.pro {
+    transform: none;
+  }
+
+  .pricing-card.pro:hover {
+    transform: translateY(-4px);
+  }
 }
 
-/* Media query to handle mobile stacking properly without scaling the pro card excessively */
+/* Medium container: slightly reduce font sizes */
+@container pricing-grid (max-width: 800px) {
+  .pricing-card.pro {
+    transform: none;
+  }
+
+  .pricing-card.pro:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Media query fallback for overall page responsiveness */
 @media (max-width: 900px) {
   .pricing-card.pro {
     transform: scale(1);

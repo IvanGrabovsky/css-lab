@@ -3,26 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll Animations Demo</title>
+    <title>Scroll Animations — CSS Lab</title>
+    <link rel="stylesheet" href="../shared.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Scroll Animation Demo</h1>
-      <p>Scroll down to see the effect.</p>
+    <header class="hero">
+      <h1>Scroll Animations</h1>
+      <p>Scroll down — each card animates into view, driven purely by CSS.</p>
     </header>
 
-    <section class="spacer"></section>
+    <main class="cards-grid">
+      <article class="card" style="--delay: 0ms">
+        <div class="card-icon">🎨</div>
+        <h2>Animation Timeline</h2>
+        <p>
+          CSS <code>animation-timeline: view()</code> links an animation's progress
+          directly to an element's position in the scroll viewport.
+        </p>
+      </article>
 
-    <section class="card">
-      <h2>Hello CSS</h2>
-      <p>This card animates based on scroll position.</p>
-    </section>
+      <article class="card" style="--delay: 50ms">
+        <div class="card-icon">⚡</div>
+        <h2>No JavaScript</h2>
+        <p>
+          No IntersectionObserver, no event listeners. The browser handles
+          everything declaratively based on scroll position.
+        </p>
+      </article>
 
-    <section class="spacer"></section>
-  
-    <div class="back-link">
-      <a href="../index.html">← Back to Labs</a>
-    </div>
+      <article class="card" style="--delay: 100ms">
+        <div class="card-icon">🎯</div>
+        <h2>Animation Range</h2>
+        <p>
+          <code>animation-range</code> lets you define exactly when in the
+          scroll journey the animation starts and ends.
+        </p>
+      </article>
+
+      <article class="card" style="--delay: 150ms">
+        <div class="card-icon">🧩</div>
+        <h2>Composable</h2>
+        <p>
+          Combine with CSS custom properties and <code>@keyframes</code> to
+          create complex staggered reveal effects without any library.
+        </p>
+      </article>
+
+      <article class="card" style="--delay: 200ms">
+        <div class="card-icon">🚀</div>
+        <h2>Performant</h2>
+        <p>
+          Scroll-driven animations run on the compositor thread, meaning zero
+          layout recalculations and butter-smooth 60fps scrolling.
+        </p>
+      </article>
+    </main>
+
+    <nav class="module-nav">
+      <a href="../04-subgrid/">← Subgrid</a>
+      <a href="../index.html" class="all-modules">All Modules</a>
+      <a href="../06-view-transitions/">View Transitions →</a>
+    </nav>
   </body>
 </html>

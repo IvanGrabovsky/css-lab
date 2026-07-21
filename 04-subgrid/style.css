@@ -1,55 +1,132 @@
-*,
-*::before,
-*::after {
+:root {
+  --bg: #0b1220;
+  --surface: #131c2e;
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #6366f1;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --radius: 1rem;
+}
+
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: system-ui, sans-serif;
-  padding: 2rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.hero {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.2rem);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+
+/* =====================================
+   SUBGRID DEMO
+   The key: parent defines row tracks,
+   each card "inherits" them via subgrid.
+===================================== */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* Define 4 row tracks all cards will share */
+  grid-template-rows: auto auto auto auto;
   gap: 1.5rem;
 }
 
 .card {
   display: grid;
-
-  /* important part */
+  /* The magic: this card spans 4 rows in the parent grid */
+  grid-row: span 4;
+  /* And uses those parent tracks for its own rows */
   grid-template-rows: subgrid;
 
-  grid-row: span 3;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  gap: 1rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.cards {
-  grid-template-rows: auto auto auto;
+.card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-4px);
 }
 
-button {
+.card-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.card h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.card button {
   align-self: end;
-}
-
-
-/* Back Link Styles */
-.back-link {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-}
-.back-link a {
-  color: inherit;
-  opacity: 0.7;
-  text-decoration: none;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.875rem;
   font-weight: 500;
-  transition: opacity 0.3s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
 }
-.back-link a:hover {
-  opacity: 1;
-  text-decoration: underline;
+
+.card button:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
 }

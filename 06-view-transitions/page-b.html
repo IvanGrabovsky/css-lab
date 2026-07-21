@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Transitions — Page B — CSS Lab</title>
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-b">
+    <main class="page-layout">
+      <h1>Page B</h1>
+
+      <div class="demos-grid">
+        <section class="demo-card">
+          <h2>You navigated here via CSS!</h2>
+          <p>
+            No JavaScript was used for this page transition. The browser
+            applied the cross-fade animation automatically because both
+            pages declare:
+          </p>
+          <pre><code>@view-transition {
+  navigation: auto;
+}</code></pre>
+        </section>
+
+        <section class="demo-card">
+          <h2>How it works</h2>
+          <p>
+            When the browser navigates between two same-origin pages that
+            both opt-in via <code>@view-transition</code>, it captures
+            screenshots of both pages and cross-fades them using the
+            <code>::view-transition-*</code> pseudo-elements.
+          </p>
+          <a href="./index.html" class="demo-btn link-btn">← Back to Page A</a>
+        </section>
+      </div>
+    </main>
+
+    <nav class="module-nav">
+      <a href="../05-scroll-animations/">← Scroll Animations</a>
+      <a href="../index.html" class="all-modules">All Modules</a>
+      <a href="../07-anchor-positioning/">Anchor Positioning →</a>
+    </nav>
+  </body>
+</html>

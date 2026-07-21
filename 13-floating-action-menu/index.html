@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Floating Action Menu</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Floating Action Menu — CSS Lab</title>
+  <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -31,24 +32,23 @@
 
       <!-- Action Menu (Positioned via Anchor Positioning) -->
       <nav class="fab-menu">
-        <button class="fab-item" aria-label="Create Document">
+        <button class="fab-item" aria-label="Create Document" data-label="Document">
           <span class="material-icons">description</span>
-          <span class="fab-tooltip">Document</span>
         </button>
-        <button class="fab-item" aria-label="Add Photo">
+        <button class="fab-item" aria-label="Add Photo" data-label="Photo">
           <span class="material-icons">insert_photo</span>
-          <span class="fab-tooltip">Photo</span>
         </button>
-        <button class="fab-item" aria-label="Share">
+        <button class="fab-item" aria-label="Share" data-label="Share">
           <span class="material-icons">share</span>
-          <span class="fab-tooltip">Share</span>
         </button>
       </nav>
     </div>
-    
-    <div class="back-link">
-      <a href="../index.html">← Back to Labs</a>
-    </div>
-  </main>
-</body>
+</main>
+
+    <nav class="module-nav">
+      <a href="../12-responsive-pricing-cards/">← Responsive Pricing Cards</a>
+      <a href="../index.html" class="all-modules">All Modules</a>
+      <a href="../14-dashboard-widgets/">Dashboard Widgets →</a>
+    </nav>
+  </body>
 </html>

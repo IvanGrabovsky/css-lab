@@ -1,0 +1,72 @@
+/* =========================
+   SHARED — CSS Lab
+   Imported by all modules
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================
+   BACK LINK
+========================= */
+
+.back-link {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.back-link a {
+  color: inherit;
+  opacity: 0.6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: opacity 0.2s ease;
+}
+
+.back-link a:hover {
+  opacity: 1;
+}
+
+/* =========================
+   MODULE NAV (Prev / All / Next)
+========================= */
+
+.module-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.module-nav a {
+  color: inherit;
+  opacity: 0.6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.module-nav a:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.module-nav a.all-modules {
+  font-size: 0.75rem;
+  opacity: 0.4;
+  border-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.module-nav a.all-modules:hover {
+  opacity: 0.8;
+  background-color: transparent;
+}

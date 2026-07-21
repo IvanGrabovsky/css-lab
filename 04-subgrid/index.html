@@ -3,33 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Subgrid Demo</title>
+    <title>Subgrid — CSS Lab</title>
+    <link rel="stylesheet" href="../shared.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Subgrid Demo</h1>
-
-    <div class="cards">
-      <article class="card">
-        <h2>Short title</h2>
-        <p>Small description.</p>
-        <button>Read more</button>
-      </article>
-
-      <article class="card">
-        <h2>A much longer title that spans multiple lines</h2>
-
-        <p>
-          Longer description text demonstrating how subgrid keeps content
-          aligned across cards.
+    <main class="container">
+      <header class="hero">
+        <h1>CSS Subgrid</h1>
+        <p class="subtitle">
+          Cards with different content lengths — all perfectly aligned using
+          <code>grid-template-rows: subgrid</code>.
         </p>
+      </header>
 
-        <button>Read more</button>
-      </article>
-    </div>
-  
-    <div class="back-link">
-      <a href="../index.html">← Back to Labs</a>
-    </div>
+      <section class="cards">
+        <article class="card">
+          <div class="card-icon">🎨</div>
+          <h2>Design Systems</h2>
+          <p>Build scalable, consistent component libraries that work across your entire product.</p>
+          <button>Explore</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⚡</div>
+          <h2>A Much Longer Title That Wraps Across Multiple Lines</h2>
+          <p>Short description.</p>
+          <button>Explore</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🧩</div>
+          <h2>Component Architecture</h2>
+          <p>Structure your UI into reusable, self-contained components that compose beautifully and scale with your codebase.</p>
+          <button>Explore</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🚀</div>
+          <h2>Performance</h2>
+          <p>Understand how CSS subgrid removes the need for JavaScript-based height matching, resulting in faster, leaner UIs.</p>
+          <button>Explore</button>
+        </article>
+      </section>
+    </main>
+
+    <nav class="module-nav">
+      <a href="../03-container-queries/">← Container Queries</a>
+      <a href="../index.html" class="all-modules">All Modules</a>
+      <a href="../05-scroll-animations/">Scroll Animations →</a>
+    </nav>
   </body>
 </html>

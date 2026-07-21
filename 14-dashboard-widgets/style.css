@@ -61,19 +61,34 @@ body {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Mobile: single column */
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   max-width: 1200px;
 }
 
-.widget-large {
-  grid-column: 1 / -1;
+/* Tablet: 2 columns */
+@media (min-width: 640px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (min-width: 768px) {
+/* Desktop: explicit 3-column layout so spans are meaningful */
+@media (min-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* wide widget: spans 2 of 3 columns (next to a narrow widget) */
   .widget-wide {
     grid-column: span 2;
   }
+}
+
+/* Full-width widget always spans all columns */
+.widget-large {
+  grid-column: 1 / -1;
 }
 
 /* WIDGET CONTAINER SETUP */

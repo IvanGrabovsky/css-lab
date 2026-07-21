@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* =========================
    BASE SYSTEM
 ========================= */
@@ -21,7 +23,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -132,13 +134,13 @@ body {
   outline: 2px solid var(--accent);
 }
 
-/* invalid state */
-.card:has(input:invalid) {
+/* invalid state — only after the user has interacted (:user-invalid) */
+.card:has(input:user-invalid) {
   border-color: var(--danger);
 }
 
-/* disable button if invalid exists */
-.card:has(input:invalid) .submit {
+/* disable button only after user types something invalid */
+.card:has(input:user-invalid) .submit {
   opacity: 0.4;
   pointer-events: none;
 }
@@ -162,23 +164,4 @@ body {
 
 .card:active {
   transform: scale(0.99);
-}
-
-
-/* Back Link Styles */
-.back-link {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-}
-.back-link a {
-  color: inherit;
-  opacity: 0.7;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-.back-link a:hover {
-  opacity: 1;
-  text-decoration: underline;
 }

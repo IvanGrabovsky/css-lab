@@ -3,33 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Transitions Demo</title>
+    <title>View Transitions — CSS Lab</title>
+    <link rel="stylesheet" href="../shared.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>View Transitions Demo</h1>
+    <main class="page-layout">
+      <h1>View Transitions</h1>
 
-    <p>Click the button to switch the theme.</p>
+      <div class="demos-grid">
+        <!-- Demo 1: JS-triggered transition -->
+        <section class="demo-card">
+          <h2>1 — JavaScript API</h2>
+          <p>
+            Use <code>document.startViewTransition()</code> to wrap any
+            DOM mutation. The browser captures a before/after snapshot
+            and plays the CSS transition between them.
+          </p>
+          <button id="toggleTheme" class="demo-btn">Toggle Theme</button>
+        </section>
 
-    <button id="toggleTheme">Toggle Theme</button>
+        <!-- Demo 2: CSS-native page navigation -->
+        <section class="demo-card">
+          <h2>2 — CSS-native Navigation</h2>
+          <p>
+            With <code>@view-transition { navigation: auto; }</code> in CSS,
+            browser navigations between same-origin pages are automatically
+            animated — no JavaScript needed.
+          </p>
+          <a href="./page-b.html" class="demo-btn link-btn">Go to Page B →</a>
+        </section>
+      </div>
+    </main>
+
+    <nav class="module-nav">
+      <a href="../05-scroll-animations/">← Scroll Animations</a>
+      <a href="../index.html" class="all-modules">All Modules</a>
+      <a href="../07-anchor-positioning/">Anchor Positioning →</a>
+    </nav>
 
     <script>
       const button = document.getElementById("toggleTheme");
-
       button.addEventListener("click", () => {
         if (!document.startViewTransition) {
           document.body.classList.toggle("dark");
           return;
         }
-
         document.startViewTransition(() => {
           document.body.classList.toggle("dark");
         });
       });
     </script>
-  
-    <div class="back-link">
-      <a href="../index.html">← Back to Labs</a>
-    </div>
   </body>
 </html>
