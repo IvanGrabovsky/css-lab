@@ -1,0 +1,165 @@
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --border: rgba(255, 255, 255, 0.1);
+  --primary: #8b5cf6;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --radius: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====================================================
+   HEADER
+==================================================== */
+.gallery-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(2rem, 5vw, 4rem);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gallery-header p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+  background: rgba(139, 92, 246, 0.15);
+  color: #c4b5fd;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* ====================================================
+   GALLERY CONTAINER
+==================================================== */
+.gallery {
+  display: flex;
+  gap: 1rem;
+  height: 60vh;
+  min-height: 400px;
+  width: 100%;
+}
+
+/* 
+  When the gallery is hovered, dim all child panels 
+  that are NOT currently being hovered.
+  Powered by the modern :has() selector!
+*/
+.gallery:has(.gallery-panel:hover) .gallery-panel:not(:hover) {
+  opacity: 0.4;
+  filter: grayscale(80%);
+}
+
+/* ====================================================
+   GALLERY PANELS
+==================================================== */
+.gallery-panel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  cursor: pointer;
+  /* Animate flex-grow, opacity, and filters smoothly */
+  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.5s ease, 
+              filter 0.5s ease;
+  
+  /* Fallback backgrounds for the gradients */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid var(--border);
+}
+
+.gallery-panel:hover {
+  flex: 4; /* Expand the hovered item to take up more space */
+}
+
+/* Fake images using beautiful CSS gradients */
+.panel-1 { background: linear-gradient(45deg, #f97316, #ef4444); }
+.panel-2 { background: linear-gradient(45deg, #10b981, #3b82f6); }
+.panel-3 { background: linear-gradient(45deg, #0ea5e9, #6366f1); }
+.panel-4 { background: linear-gradient(45deg, #eab308, #f97316); }
+.panel-5 { background: linear-gradient(45deg, #8b5cf6, #d946ef); }
+
+/* ====================================================
+   PANEL CONTENT
+==================================================== */
+.panel-content {
+  padding: 2rem;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  /* Ensure text doesn't wrap awkwardly while panel is narrow */
+  white-space: nowrap;
+}
+
+.gallery-panel:hover .panel-content {
+  opacity: 1;
+  transform: translateY(0);
+  /* Slight delay so text appears after panel expands */
+  transition-delay: 0.1s;
+}
+
+.panel-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.panel-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+/* ====================================================
+   RESPONSIVE DESIGN
+==================================================== */
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+    height: 75vh;
+  }
+}
