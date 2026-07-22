@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Command Palette — CSS Lab</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="palette-layout">
+    <header class="palette-header">
+      <h1>Command Palette</h1>
+      <p>A modern command palette UI utilizing View Transitions for smooth state changes and native HTML dialog.</p>
+      
+      <button id="open-palette" class="open-btn">Open Command Palette (⌘K)</button>
+    </header>
+
+    <dialog id="command-palette" class="command-palette">
+      <div class="palette-container">
+        <div class="palette-search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" placeholder="Type a command or search..." autofocus>
+          <span class="esc-hint">ESC</span>
+        </div>
+        
+        <div class="palette-results">
+          <div class="palette-group">
+            <h3 class="group-title">Suggestions</h3>
+            <ul class="result-list">
+              <li class="result-item" tabindex="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>Create new file...</span>
+              </li>
+              <li class="result-item" tabindex="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                <span>Navigate to Dashboard</span>
+              </li>
+              <li class="result-item" tabindex="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Send a message</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="palette-group">
+            <h3 class="group-title">Settings</h3>
+            <ul class="result-list">
+              <li class="result-item" tabindex="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>Preferences</span>
+              </li>
+              <li class="result-item" tabindex="0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <span>Toggle Theme</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </main>
+
+  <nav class="module-nav">
+    <a href="../15-animated-gallery/">← Animated Gallery</a>
+    <a href="../index.html" class="all-modules">All Modules</a>
+    <span></span>
+  </nav>
+
+  <script>
+    const dialog = document.getElementById('command-palette');
+    const openBtn = document.getElementById('open-palette');
+
+    openBtn.addEventListener('click', () => {
+      if (!document.startViewTransition) {
+        dialog.showModal();
+        return;
+      }
+      
+      document.startViewTransition(() => {
+        dialog.showModal();
+      });
+    });
+
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        if (!document.startViewTransition) {
+          dialog.close();
+          return;
+        }
+        
+        document.startViewTransition(() => {
+          dialog.close();
+        });
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        openBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
