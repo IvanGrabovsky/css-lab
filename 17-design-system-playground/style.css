@@ -1,0 +1,100 @@
+:root {
+  --ds-primary: #6366f1;
+  --ds-secondary: #ec4899;
+  --ds-surface: #1e293b;
+  --ds-bg: #0f172a;
+  --ds-text: #f8fafc;
+  --ds-text-muted: #94a3b8;
+  
+  --ds-radius: 0.75rem;
+  --ds-spacing: clamp(1rem, 5vw, 3rem);
+}
+
+body {
+  background-color: var(--ds-bg);
+  color: var(--ds-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: var(--ds-spacing);
+}
+
+.playground {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--ds-spacing);
+}
+
+.playground-header h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  background: linear-gradient(to right, var(--ds-primary), var(--ds-secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.playground-header p {
+  color: var(--ds-text-muted);
+  font-size: 1.125rem;
+}
+
+.ds-section h2 {
+  border-bottom: 1px solid var(--ds-surface);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.ds-card {
+  background: var(--ds-surface);
+  padding: 1.5rem;
+  border-radius: var(--ds-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ds-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.ds-color-box {
+  aspect-ratio: 1;
+  border-radius: var(--ds-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ds-color-box.primary { background: var(--ds-primary); }
+.ds-color-box.secondary { background: var(--ds-secondary); }
+.ds-color-box.surface { background: var(--ds-surface); }
+.ds-color-box.background { background: var(--ds-bg); }
+
+.ds-btn {
+  background: var(--ds-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--ds-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.ds-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.ds-btn.secondary {
+  background: transparent;
+  border: 1px solid var(--ds-primary);
+  color: var(--ds-primary);
+}
+
+.ds-btn.secondary:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
